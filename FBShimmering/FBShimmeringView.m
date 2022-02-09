@@ -50,6 +50,11 @@ LAYER_RW_PROPERTY(shimmeringBeginFadeDuration, setShimmeringBeginFadeDuration:, 
 LAYER_RW_PROPERTY(shimmeringEndFadeDuration, setShimmeringEndFadeDuration:, CFTimeInterval)
 LAYER_RW_PROPERTY(shimmeringBeginTime, setShimmeringBeginTime:, CFTimeInterval)
 
+-(void)dealloc
+{
+  [__layer setContentLayer:nil];
+}
+
 - (void)setContentView:(UIView *)contentView
 {
   if (contentView != _contentView) {
